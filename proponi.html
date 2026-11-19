@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="it" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carica il tuo progetto · Beyond</title>
+  <meta name="description" content="Carica il tuo prototipo con la scheda di progetto e il pacchetto di richiesta: l'IT lo porta in produzione.">
+  <meta name="theme-color" content="#08090A">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/coesa-mark.svg">
+  <script>try{var t=new URLSearchParams(location.search).get("theme")||localStorage.getItem("beyond-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);if(/[?&]shot/.test(location.search))document.documentElement.classList.add("no-anim")}catch(e){}</script>
+  <script src="assets/accesso.js?v=22ce8e7e"></script>
+  <link rel="stylesheet" href="assets/style.css?v=22ce8e7e">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Beyond, home">
+      <img class="logo-dark" src="assets/brand/coesa-white.svg" alt="Coesa Energy" width="76" height="26">
+      <span class="sep" aria-hidden="true"></span>
+      <span class="prod">Beyond</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Sezioni">
+      <a href="index.html#strumenti">Strumenti</a>
+      <a href="piano.html">Piano di sviluppo</a>
+      <a href="processo.html">Come funziona</a>
+      <a href="proponi.html" class="cta" aria-current="page">Carica il tuo progetto</a>
+    </nav>
+    <div class="top-actions">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambia tema chiaro / scuro" title="Tema chiaro / scuro">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-btn" type="button" data-menu-toggle aria-controls="menu" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-page on-hero" style="padding-bottom:76px">
+    <div class="wrap">
+      <a class="back" href="index.html#strumenti"><span aria-hidden="true">←</span> Torna agli strumenti</a>
+      <h1>Carica il tuo <span class="y">progetto</span></h1>
+      <p class="lead">Costruisci il prototipo con Claude e la skill di Beyond, poi carica qui lo zip: il modulo si compila da solo, tu controlli e confermi. L'Ufficio Innovazione lo valuta e ti risponde sempre, con il motivo, entro 5 giorni lavorativi.</p>
+      <div class="meta-row">
+        <span>Con lo zip: <b>5 minuti</b> per controllare</span>
+        <span>Codice tracciato su <b>GitHub</b></span>
+        <span>Bozza salvata <b>automaticamente</b> su questo dispositivo</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="form-layout">
+      <div>
+        <!-- ========== INIZIA CON CLAUDE ========== -->
+        <section class="start-card" id="startCard" aria-labelledby="startTitle">
+          <div class="start-head">
+            <span class="eyebrow">Si parte da qui</span>
+            <h2 id="startTitle">Crea il progetto con Claude, poi caricalo</h2>
+            <p>La skill di Beyond insegna a Claude Code le regole dei prototipi Coesa: ti fa le domande giuste, configura il tuo GitHub e prepara lo zip che compila questo modulo.</p>
+          </div>
+          <ol class="start-steps">
+            <li class="start-step">
+              <span class="sn">1</span>
+              <h3>Scarica la skill</h3>
+              <p>Un file da dare a Claude Code, una volta sola.</p>
+              <a class="btn btn-primary" id="skillDownload" href="assets/skill/beyond-nuovo-progetto.zip" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-3.5"/></svg>
+                Scarica la skill</a>
+            </li>
+            <li class="start-step">
+              <span class="sn">2</span>
+              <h3>Installala e inizia</h3>
+              <p>Apri <b>Claude Code</b> (app desktop) e scrivi:</p>
+              <div class="prompt-box">
+                <code id="promptInstall">Installa la skill di Beyond: estrai %USERPROFILE%\Downloads\beyond-nuovo-progetto.zip nella cartella %USERPROFILE%\.claude\skills\</code>
+                <button type="button" class="copy-btn" data-copy="promptInstall" aria-label="Copia il testo">Copia</button>
+              </div>
+              <p class="small">Poi chiudi e riapri Claude Code e scrivi: <i>«Voglio creare un nuovo progetto per Beyond»</i>. Claude ti guida fino allo zip.</p>
+            </li>
+            <li class="start-step">
+              <span class="sn">3</span>
+              <h3>Carica lo zip del progetto</h3>
+              <p>Lo trovi nella cartella <code>consegna</code> del progetto.</p>
+              <div class="dropzone dz-zip" id="zipDrop">
+                <input type="file" accept=".zip,application/zip" aria-label="Carica lo zip del progetto">
+                <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 14.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-4.5"/></svg></div>
+                <div class="t">Trascina qui lo zip oppure <u>sfoglia</u></div>
+                <div class="s">proto-….zip · il modulo si compila da solo</div>
+              </div>
+            </li>
+          </ol>
+          <div class="alert hidden" id="zipResult" role="status" aria-live="polite"></div>
+        </section>
+
+        <nav class="stepper" id="stepper" aria-label="Passaggi del modulo">
+          <button type="button" data-go="0" aria-current="step"><span class="n">1</span>Idea Card</button>
+          <button type="button" data-go="1"><span class="n">2</span>MVP e istruzioni</button>
+          <button type="button" data-go="2"><span class="n">3</span>Dati e semaforo</button>
+          <button type="button" data-go="3"><span class="n">4</span>Riepilogo e invio</button>
+        </nav>
+
+        <div class="form-card">
+          <div class="alert amber hidden" id="demoAlert" role="status" style="margin-bottom:22px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>
+            <div><b>Modalità anteprima.</b> Nessun endpoint configurato in <code>assets/config.js</code>: puoi compilare e provare il modulo, ma i dati non vengono inviati.</div>
+          </div>
+
+          <form id="ideaForm" novalidate>
+            <!-- ========== 1. IDEA CARD ========== -->
+            <fieldset data-step="0">
+              <div class="fs-head">
+                <span class="eyebrow">Passo 1 di 4 · Fase 0, Segnalazione</span>
+                <h2>Idea Card</h2>
+                <p>Una pagina che parte dal risultato atteso, non dalla tecnologia. Il problema va espresso in numeri: è il criterio per passare alla fase successiva.</p>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Titolo e reparto</div>
+                <div class="field" data-field="titolo">
+                  <label for="titolo">Nome sintetico del progetto<span class="req">*</span></label>
+                  <input type="text" id="titolo" name="titolo" maxlength="90" placeholder="es. Verbale di sopralluogo dettato da telefono" required>
+                  <span class="err">Dai un nome al progetto.</span>
+                </div>
+                <div class="grid2" style="margin-top:16px">
+                  <div class="field" data-field="funzione">
+                    <label for="funzione">Reparto richiedente<span class="req">*</span></label>
+                    <select id="funzione" name="funzione" required>
+                      <option value="">Seleziona…</option>
+                      <option>Direzione</option>
+                      <option>Commerciale Fotovoltaico</option>
+                      <option>Operation Fotovoltaico</option>
+                      <option>Commerciale RE-ETS</option>
+                      <option>Commerciale PA</option>
+                      <option>Amministrazione</option>
+                      <option>Operation RE-ETS / PA</option>
+                      <option>Innovation</option>
+                      <option>Strategy</option>
+                      <option>Marketing &amp; Communication</option>
+                      <option>HR</option>
+                      <option>Finance</option>
+                    </select>
+                    <span class="err">Indica il reparto.</span>
+                  </div>
+                  <div class="field" data-field="champion">
+                    <label for="champion">AI Champion di riferimento<span class="opt">se c'è</span></label>
+                    <select id="champion" name="champion">
+                      <option value="">Nessuno</option>
+                      <option>Matteo Stoppa</option>
+                      <option>Lorenzo Maero</option>
+                      <option>Federico d'Agostino</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid3" style="margin-top:16px">
+                  <div class="field" data-field="nome">
+                    <label for="nome">Nome<span class="req">*</span></label>
+                    <input type="text" id="nome" name="nome" autocomplete="given-name" required>
+                    <span class="err">Inserisci il nome.</span>
+                  </div>
+                  <div class="field" data-field="cognome">
+                    <label for="cognome">Cognome<span class="req">*</span></label>
+                    <input type="text" id="cognome" name="cognome" autocomplete="family-name" required>
+                    <span class="err">Inserisci il cognome.</span>
+                  </div>
+                  <div class="field" data-field="email">
+                    <label for="email">Email aziendale<span class="req">*</span></label>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="nome@coesaenergy.com" required>
+                    <span class="err" id="emailErr">Serve un indirizzo email valido.</span>
+                    <input type="text" name="sito_web" id="sito_web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+                  </div>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Il problema oggi</div>
+                <div class="field" data-field="problema">
+                  <label for="problema">Che cosa non funziona oggi, in numeri<span class="req">*</span></label>
+                  <textarea id="problema" name="problema" data-count required placeholder="es. Ogni verbale richiede 40 minuti di trascrizione in ufficio; ne facciamo circa 25 a settimana. Il 10% torna indietro per firme mancanti."></textarea>
+                  <span class="help">Ore a settimana, errori, ritardi, costi: anche una stima va bene, purché sia un numero.</span>
+                  <span class="err">Descrivi il problema, con almeno un numero.</span>
+                </div>
+                <div class="grid2">
+                  <div class="field" data-field="ore_settimana">
+                    <label for="ore_settimana">Ore spese a settimana<span class="opt">stima</span></label>
+                    <div class="inline-unit"><input type="number" id="ore_settimana" name="ore_settimana" min="0" step="0.5" placeholder="16"><span>ore / sett.</span></div>
+                  </div>
+                  <div class="field" data-field="persone">
+                    <label for="persone">Persone coinvolte<span class="opt">stima</span></label>
+                    <div class="inline-unit"><input type="number" id="persone" name="persone" min="0" step="1" placeholder="6"><span>persone</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Risultato atteso</div>
+                <div class="field" data-field="risultato">
+                  <label for="risultato">Che cosa deve cambiare<span class="req">*</span></label>
+                  <textarea id="risultato" name="risultato" data-count required placeholder="es. Il capocantiere detta il verbale sul posto, raccoglie le firme sul telefono e il documento arriva in Odoo senza passaggi in ufficio."></textarea>
+                  <span class="err">Descrivi il risultato atteso.</span>
+                </div>
+                <div class="field" data-field="misura">
+                  <label for="misura">Come lo misureremo<span class="req">*</span></label>
+                  <input type="text" id="misura" name="misura" required placeholder="es. Tempo medio per verbale da 40 a 10 minuti; verbali respinti sotto il 2%">
+                  <span class="err">Indica come misurare il risultato.</span>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Utenti, frequenza e beneficio</div>
+                <div class="grid2">
+                  <div class="field" data-field="utenti">
+                    <label for="utenti">Chi lo userà<span class="req">*</span></label>
+                    <input type="text" id="utenti" name="utenti" required placeholder="es. 8 capocantiere e 2 project manager">
+                    <span class="err">Indica chi lo userà.</span>
+                  </div>
+                  <div class="field" data-field="frequenza">
+                    <label for="frequenza">Quanto spesso<span class="req">*</span></label>
+                    <select id="frequenza" name="frequenza" required>
+                      <option value="">Seleziona…</option>
+                      <option>Più volte al giorno</option>
+                      <option>Ogni giorno</option>
+                      <option>Ogni settimana</option>
+                      <option>Ogni mese</option>
+                      <option>Occasionalmente</option>
+                    </select>
+                    <span class="err">Indica la frequenza d'uso.</span>
+                  </div>
+                </div>
+                <div class="field" data-field="beneficio_tipo">
+                  <span class="label">Tipo di beneficio<span class="req">*</span></span>
+                  <div class="opts">
+                    <label class="opt-chip"><input type="checkbox" name="beneficio_tipo" value="Tempo liberato"><span>Tempo liberato</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="beneficio_tipo" value="Margine"><span>Margine</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="beneficio_tipo" value="Qualità"><span>Qualità</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="beneficio_tipo" value="Rischio evitato"><span>Rischio evitato</span></label>
+                  </div>
+                  <span class="err">Scegli almeno un tipo di beneficio.</span>
+                </div>
+                <div class="field" data-field="beneficio">
+                  <label for="beneficio">Beneficio stimato<span class="req">*</span></label>
+                  <input type="text" id="beneficio" name="beneficio" required placeholder="es. circa 60 ore al mese liberate, meno contestazioni con i clienti">
+                  <span class="help">Il valore dichiarato viene validato dal controllo di gestione quando ha un impatto economico.</span>
+                  <span class="err">Stima il beneficio.</span>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Urgenza</div>
+                <div class="field" data-field="urgenza">
+                  <span class="label">C'è una scadenza o un evento che la rende prioritaria?</span>
+                  <div class="opts">
+                    <label class="opt-chip"><input type="radio" name="urgenza" value="Nessuna scadenza" checked><span>No, nessuna scadenza</span></label>
+                    <label class="opt-chip"><input type="radio" name="urgenza" value="Scadenza"><span>Sì, c'è una scadenza</span></label>
+                  </div>
+                </div>
+                <div class="grid2 hidden" id="urgenzaDett">
+                  <div class="field" data-field="urgenza_data">
+                    <label for="urgenza_data">Entro quando<span class="req">*</span></label>
+                    <input type="date" id="urgenza_data" name="urgenza_data">
+                    <span class="err">Indica la data.</span>
+                  </div>
+                  <div class="field" data-field="urgenza_motivo">
+                    <label for="urgenza_motivo">Perché quella data<span class="req">*</span></label>
+                    <input type="text" id="urgenza_motivo" name="urgenza_motivo" placeholder="es. avvio cantieri primavera, nuova normativa">
+                    <span class="err">Spiega il motivo.</span>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- ========== 2. MVP E ISTRUZIONI ========== -->
+            <fieldset data-step="1" hidden>
+              <div class="fs-head">
+                <span class="eyebrow">Passo 2 di 4 · Fase 1, MVP e istruzioni</span>
+                <h2>Il tuo MVP e come si usa</h2>
+                <p>Chi propone, prototipa: un MVP funzionante, anche rudimentale, dimostra il bisogno meglio di qualsiasi descrizione. Può essere un prompt, un foglio, un flusso o una bozza di schermata.</p>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Il prototipo</div>
+                <div class="field" data-field="mvp_tipo">
+                  <span class="label">Che tipo di MVP hai preparato<span class="req">*</span></span>
+                  <div class="opts">
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Prompt"><span>Prompt</span></label>
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Foglio di calcolo"><span>Foglio di calcolo</span></label>
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Flusso o automazione"><span>Flusso o automazione</span></label>
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Bozza di schermata"><span>Bozza di schermata</span></label>
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Prototipo o app"><span>Prototipo o app</span></label>
+                    <label class="opt-chip"><input type="radio" name="mvp_tipo" value="Altro"><span>Altro</span></label>
+                  </div>
+                  <span class="err">Scegli il tipo di MVP.</span>
+                </div>
+                <div class="field" data-field="mvp_link">
+                  <label for="mvp_link">Repository GitHub del progetto<span class="req">*</span></label>
+                  <input type="url" id="mvp_link" name="mvp_link" placeholder="https://github.com/tuo-utente/proto-reparto-nome">
+                  <span class="help">Il repository privato dove c'è tutto il codice: l'Ufficio Innovazione lavora da lì. Se usi la skill lo compila lo zip.</span>
+                  <span class="err">Serve il link al repository: https://github.com/utente/proto-…</span>
+                </div>
+                <div class="field" data-field="mvp_files">
+                  <span class="label">File dell'MVP<span class="opt">lo zip del progetto, screenshot, video</span></span>
+                  <div class="dropzone" data-drop="mvp">
+                    <input type="file" multiple aria-label="Carica i file dell'MVP">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 14.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-4.5"/></svg></div>
+                    <div class="t">Trascina qui i file oppure <u>sfoglia</u></div>
+                    <div class="s" data-limits></div>
+                  </div>
+                  <ul class="files" data-list="mvp"></ul>
+                  <span class="err" data-err="mvp">Controlla i file dell'MVP.</span>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Istruzioni d'uso</div>
+                <div class="field" data-field="scopo">
+                  <label for="scopo">Scopo<span class="req">*</span></label>
+                  <input type="text" id="scopo" name="scopo" required placeholder="A che cosa serve, in una frase">
+                  <span class="err">Indica lo scopo.</span>
+                </div>
+                <div class="grid2">
+                  <div class="field" data-field="input">
+                    <label for="input">Input richiesti<span class="req">*</span></label>
+                    <textarea id="input" name="input" required placeholder="Che cosa serve per farlo funzionare: file, dati, informazioni"></textarea>
+                    <span class="err">Elenca gli input.</span>
+                  </div>
+                  <div class="field" data-field="passi">
+                    <label for="passi">Passi da seguire<span class="req">*</span></label>
+                    <textarea id="passi" name="passi" required placeholder="1. Apri…&#10;2. Incolla…&#10;3. Controlla…"></textarea>
+                    <span class="err">Descrivi i passi.</span>
+                  </div>
+                </div>
+                <div class="grid2">
+                  <div class="field" data-field="esempio">
+                    <label for="esempio">Esempio di risultato corretto<span class="req">*</span></label>
+                    <textarea id="esempio" name="esempio" required placeholder="Che cosa si ottiene quando funziona bene"></textarea>
+                    <span class="err">Descrivi un risultato corretto.</span>
+                  </div>
+                  <div class="field" data-field="limiti">
+                    <label for="limiti">Casi in cui non funziona<span class="req">*</span></label>
+                    <textarea id="limiti" name="limiti" required placeholder="Limiti noti, situazioni da evitare"></textarea>
+                    <span class="err">Indica almeno un limite noto.</span>
+                  </div>
+                </div>
+                <div class="field" data-field="provato_da">
+                  <label for="provato_da">Chi lo ha provato<span class="req">*</span></label>
+                  <input type="text" id="provato_da" name="provato_da" required placeholder="es. 2 colleghi del cantiere di Asti per due settimane">
+                  <span class="err">Indica chi lo ha provato.</span>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Tre casi di prova <span class="soft">diventano i criteri di accettazione in fase di delivery</span></div>
+                <div class="cases" id="cases"></div>
+              </div>
+            </fieldset>
+
+            <!-- ========== 3. DATI E SEMAFORO ========== -->
+            <fieldset data-step="2" hidden>
+              <div class="fs-head">
+                <span class="eyebrow">Passo 3 di 4 · Sicurezza dei dati</span>
+                <h2>Dati, sistemi e semaforo</h2>
+                <p>L'autonomia si guadagna: si sperimenta in un perimetro protetto, e l'accesso ai dati reali arriva solo dopo i controlli previsti.</p>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Dati e sistemi coinvolti</div>
+                <div class="field" data-field="sistemi">
+                  <span class="label">Sistemi<span class="req">*</span></span>
+                  <div class="opts">
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Odoo"><span>Odoo / gestionale</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Excel e file condivisi"><span>Excel e file condivisi</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Email"><span>Email</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Documenti e PDF"><span>Documenti e PDF</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Portali esterni"><span>Portali esterni (GSE, enti…)</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Nessuno"><span>Nessuno</span></label>
+                    <label class="opt-chip"><input type="checkbox" name="sistemi" value="Altro"><span>Altro</span></label>
+                  </div>
+                  <span class="err">Indica almeno un sistema, oppure "Nessuno".</span>
+                </div>
+                <div class="field" data-field="dati_descr">
+                  <label for="dati_descr">Quali dati usa<span class="req">*</span></label>
+                  <textarea id="dati_descr" name="dati_descr" required placeholder="es. anagrafica commessa, foto del cantiere, nomi dei presenti al sopralluogo"></textarea>
+                  <span class="err">Descrivi i dati utilizzati.</span>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Semaforo sicurezza dati</div>
+                <div class="field" data-field="semaforo" style="margin-top:0">
+                  <span class="sr-only">Livello del semaforo dati</span>
+                  <div class="sem-cards">
+                    <label class="sem-card verde"><input type="radio" name="semaforo" value="verde">
+                      <span class="in"><span class="t"><i></i>Verde</span>
+                        <span class="d">Dati pubblici o interni non sensibili, uso personale.</span>
+                        <span class="w"><b>Dove prototipare:</b> strumenti approvati, in autonomia.</span></span></label>
+                    <label class="sem-card giallo"><input type="radio" name="semaforo" value="giallo">
+                      <span class="in"><span class="t"><i></i>Giallo</span>
+                        <span class="d">Dati aziendali interni: offerte, costi, fornitori.</span>
+                        <span class="w"><b>Dove prototipare:</b> solo negli ambienti indicati dall'Ufficio Innovazione, nessuna condivisione esterna.</span></span></label>
+                    <label class="sem-card rosso"><input type="radio" name="semaforo" value="rosso">
+                      <span class="in"><span class="t"><i></i>Rosso</span>
+                        <span class="d">Dati personali, clienti, contratti, credenziali, scrittura sul gestionale.</span>
+                        <span class="w"><b>Dove prototipare:</b> solo l'Ufficio Innovazione, in ambiente protetto.</span></span></label>
+                  </div>
+                  <span class="err">Scegli il livello del semaforo.</span>
+                </div>
+                <div class="alert neg hidden" id="redAlert" style="margin-top:14px">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.01"/></svg>
+                  <div><b>Semaforo rosso: non caricare dati reali.</b> Descrivi i dati a parole: l'Ufficio Innovazione preparerà i dati di esempio in ambiente protetto e ti contatterà.</div>
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="sec-lab">Dati di esempio anonimizzati</div>
+                <div class="field" data-field="dati_files" style="margin-top:0">
+                  <div class="dropzone" data-drop="dati">
+                    <input type="file" multiple aria-label="Carica i dati di esempio">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6M4.5 11.5v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6"/></svg></div>
+                    <div class="t">Trascina qui i dati di esempio oppure <u>sfoglia</u></div>
+                    <div class="s" data-limits></div>
+                  </div>
+                  <ul class="files" data-list="dati"></ul>
+                  <span class="err" data-err="dati">Allega almeno un file di dati di esempio.</span>
+                </div>
+                <div class="field" data-field="conferma_dati">
+                  <label class="check"><input type="checkbox" name="conferma_dati" value="si"> <span>Confermo che i file allegati non contengono dati personali, dati di clienti o credenziali e che i dati di esempio sono anonimizzati.<span class="req" style="color:var(--accent-ink)">*</span></span></label>
+                  <span class="err">Serve la conferma per proseguire.</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- ========== 4. RIEPILOGO ========== -->
+            <fieldset data-step="3" hidden>
+              <div class="fs-head">
+                <span class="eyebrow">Passo 4 di 4 · Pacchetto di richiesta</span>
+                <h2>Riepilogo e invio</h2>
+                <p>Controlla il pacchetto. Una richiesta incompleta torna indietro una sola volta, con indicazioni precise su cosa manca: meglio completarla adesso.</p>
+              </div>
+              <div class="summary" id="summary"></div>
+              <div class="field" data-field="note">
+                <label for="note">Note per l'Ufficio Innovazione<span class="opt">facoltativo</span></label>
+                <textarea id="note" name="note" data-count placeholder="Qualsiasi cosa sia utile sapere: vincoli, persone da coinvolgere, idee correlate"></textarea>
+              </div>
+              <div class="alert neg hidden" id="errorAlert" role="alert" style="margin-top:18px">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>
+                <div id="errorText"></div>
+              </div>
+            </fieldset>
+
+            <div class="form-nav">
+              <button type="button" class="btn" id="prevBtn" hidden><span aria-hidden="true">←</span> Indietro</button>
+              <span class="saved" id="savedNote"></span>
+              <span class="spacer"></span>
+              <button type="button" class="btn btn-ghost btn-sm" id="clearBtn">Svuota modulo</button>
+              <button type="button" class="btn btn-primary" id="nextBtn">Avanti <span aria-hidden="true">→</span></button>
+              <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" hidden>Invia la richiesta <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
+          <div class="success hidden" id="success" role="status">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h2 id="successTitle">Richiesta inviata</h2>
+            <p id="successText"></p>
+            <div class="code" id="successCode"></div>
+            <div class="hero-cta">
+              <a class="btn" href="piano.html">Guarda il piano di sviluppo</a>
+              <button type="button" class="btn btn-primary" id="newBtn">Carica un altro progetto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- colonna laterale -->
+      <aside class="aside">
+        <div class="panel">
+          <div class="ph">Pacchetto di richiesta</div>
+          <div class="pb">
+            <div class="pkg-prog"><div class="meter"><i id="pkgBar" style="width:0%"></i></div><b id="pkgCount">0/6</b></div>
+            <ul class="pkg" id="pkg">
+              <li data-k="idea"><span class="b"></span>Idea Card completa</li>
+              <li data-k="mvp"><span class="b"></span>MVP e repository GitHub</li>
+              <li data-k="istruzioni"><span class="b"></span>Istruzioni d'uso</li>
+              <li data-k="casi"><span class="b"></span>Tre casi di prova</li>
+              <li data-k="semaforo"><span class="b"></span>Semaforo dati</li>
+              <li data-k="dati"><span class="b"></span>Dati di esempio anonimizzati</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="ph">Cosa succede dopo</div>
+          <div class="pb">
+            <ul class="next-steps">
+              <li><i>2</i><div><b>Triage, entro 5 giorni lavorativi</b>Completezza, duplicati, alternative senza AI. Ricevi uno dei cinque esiti, sempre con il motivo.</div></li>
+              <li><i>3</i><div><b>Valutazione, entro 5 giorni</b>Punteggio, stima delle giornate, semaforo dati validato.</div></li>
+              <li><i>4</i><div><b>Comitato AI mensile</b><span id="nextComitato">Decide le priorità: Now, Next, Later o Non ora.</span></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5M12 7.5v.01"/></svg>
+          <div><b>Ti serve una mano?</b> Gli AI Champion, Matteo Stoppa, Lorenzo Maero e Federico d'Agostino, ti aiutano a preparare il pacchetto. In più c'è un'ora di assistenza a settimana dell'Ufficio Innovazione.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img class="logo-light" src="assets/brand/coesa-energy.svg" alt="Coesa Energy" width="76" height="34">
+    <img class="logo-dark" src="assets/brand/coesa-energy-white.svg" alt="Coesa Energy" width="76" height="34">
+    <span>Beyond · Ufficio Innovazione</span>
+    <div class="info">
+      <span><b>COESA Srl</b></span>
+      <span>Via Beaumont 7, 10143 Torino</span>
+      <a href="https://www.coesaenergy.it">www.coesaenergy.it</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/config.js?v=22ce8e7e"></script>
+<script src="assets/data.js?v=22ce8e7e"></script>
+<script src="assets/odoo.js?v=22ce8e7e"></script>
+<script src="assets/app.js?v=22ce8e7e"></script>
+<script>
+(function () {
+  var B = window.Beyond;
+  var cfg = Object.assign({ endpoint: "", maxFileMB: 15, maxFiles: 10, maxTesto: 2000 },
+    (window.BEYOND_CONFIG && (window.BEYOND_CONFIG.proponi || window.BEYOND_CONFIG.pubblica)) || {});
+  var MAX_BYTES = cfg.maxFileMB * 1024 * 1024;
+  var DRAFT_KEY = "beyond-idea-draft";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  var form = $("#ideaForm");
+  var GITHUB_RE = /^https:\/\/github\.com\/[A-Za-z0-9-]+\/[A-Za-z0-9._-]+\/?$/;
+  var steps = $$("fieldset[data-step]");
+  var cur = 0;
+  var files = { mvp: [], dati: [] };
+
+  /* ---------- setup ---------- */
+  if (!cfg.endpoint) $("#demoAlert").classList.remove("hidden");
+  $$("[data-limits]").forEach(function (e) { e.textContent = "Qualsiasi formato · max " + cfg.maxFiles + " file, " + cfg.maxFileMB + " MB ciascuno"; });
+  $$("textarea").forEach(function (t) { t.setAttribute("maxlength", cfg.maxTesto); });
+  var T = (window.BEYOND_DATA || {}).trimestre || {};
+  if (T.prossimoComitato) $("#nextComitato").textContent = "Il prossimo è il " + B.fmtDate(T.prossimoComitato, true) + ": decide Now, Next, Later o Non ora.";
+
+  // tre casi di prova
+  $("#cases").innerHTML = [1, 2, 3].map(function (n) {
+    return '<div class="case"><div class="case-h"><i>' + n + "</i>Caso di prova " + n + "</div>" +
+      '<div class="grid2">' +
+      '<div class="field" data-field="caso' + n + '_input"><label for="caso' + n + '_input">Situazione e input<span class="req">*</span></label>' +
+      '<textarea id="caso' + n + '_input" name="caso' + n + '_input" rows="3" required placeholder="' + ["es. Sopralluogo con 3 presenti, foto del quadro elettrico", "es. Verbale senza firma del cliente", "es. Connessione assente in cantiere"][n - 1] + '"></textarea>' +
+      '<span class="err">Descrivi il caso.</span></div>' +
+      '<div class="field" data-field="caso' + n + '_atteso"><label for="caso' + n + '_atteso">Risultato atteso<span class="req">*</span></label>' +
+      '<textarea id="caso' + n + '_atteso" name="caso' + n + '_atteso" rows="3" required placeholder="Che cosa deve succedere"></textarea>' +
+      '<span class="err">Indica il risultato atteso.</span></div></div></div>';
+  }).join("");
+
+  /* ---------- navigazione tra i passi ---------- */
+  function go(i, focus) {
+    cur = Math.max(0, Math.min(steps.length - 1, i));
+    steps.forEach(function (s, k) { s.hidden = k !== cur; });
+    $$("#stepper button").forEach(function (b, k) {
+      if (k === cur) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+    $("#prevBtn").hidden = cur === 0;
+    $("#nextBtn").hidden = cur === steps.length - 1;
+    $("#submitBtn").hidden = cur !== steps.length - 1;
+    $("#clearBtn").hidden = cur === steps.length - 1;
+    if (cur === steps.length - 1) renderSummary();
+    var top = $(".stepper").getBoundingClientRect().top + window.scrollY - 84;
+    if (window.scrollY > top) window.scrollTo({ top: top, behavior: "smooth" });
+    if (focus) { var f = steps[cur].querySelector("input,select,textarea"); if (f) f.focus({ preventScroll: true }); }
+  }
+  $("#stepper").addEventListener("click", function (e) { var b = e.target.closest("[data-go]"); if (b) go(+b.dataset.go); });
+  $("#prevBtn").addEventListener("click", function () { go(cur - 1); });
+  $("#nextBtn").addEventListener("click", function () {
+    if (validateStep(cur, true)) go(cur + 1, true);
+  });
+
+  /* ---------- lettura valori ---------- */
+  function val(name) {
+    var els = form.elements[name]; if (!els) return "";
+    if (els.length && els[0] && (els[0].type === "checkbox" || els[0].type === "radio")) {
+      var out = []; Array.prototype.forEach.call(els, function (e) { if (e.checked) out.push(e.value); });
+      return els[0].type === "radio" ? (out[0] || "") : out;
+    }
+    if (els.type === "checkbox") return els.checked ? els.value : "";
+    return (els.value || "").trim();
+  }
+  function filled(name) { var v = val(name); return Array.isArray(v) ? v.length > 0 : !!v; }
+
+  /* ---------- regole di validazione per passo ---------- */
+  var RULES = [
+    ["titolo", "funzione", "nome", "cognome", "email", "problema", "risultato", "misura", "utenti", "frequenza", "beneficio_tipo", "beneficio"],
+    ["mvp_tipo", "mvp_link", "scopo", "input", "passi", "esempio", "limiti", "provato_da", "caso1_input", "caso1_atteso", "caso2_input", "caso2_atteso", "caso3_input", "caso3_atteso"],
+    ["sistemi", "dati_descr", "semaforo", "conferma_dati"],
+    []
+  ];
+  function setInvalid(name, bad) { var f = form.querySelector('[data-field="' + name + '"]'); if (f) f.classList.toggle("invalid", bad); }
+  function checks(step) {
+    var bad = [];
+    RULES[step].forEach(function (n) { if (!filled(n)) bad.push(n); });
+    if (step === 0) {
+      var em = val("email"), dom = (cfg.dominiEmail || []).map(function (d) { return d.toLowerCase(); });
+      var okDom = !dom.length || dom.indexOf(em.split("@").pop().toLowerCase()) > -1;
+      if (em && (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) || !okDom)) bad.push("email");
+      $("#emailErr").textContent = em && !okDom ? "Usa la tua email aziendale (" + dom.map(function (d) { return "@" + d; }).join(" o ") + ")." : "Serve un indirizzo email valido.";
+      if (val("urgenza") === "Scadenza") { if (!filled("urgenza_data")) bad.push("urgenza_data"); if (!filled("urgenza_motivo")) bad.push("urgenza_motivo"); }
+    }
+    if (step === 1) {
+      var l = val("mvp_link");
+      if (l && !GITHUB_RE.test(l)) bad.push("mvp_link");
+    }
+    if (step === 2 && val("semaforo") !== "rosso" && !files.dati.length) bad.push("dati_files");
+    return bad;
+  }
+  function validateStep(step, show) {
+    var bad = checks(step);
+    if (show) {
+      RULES[step].concat(["email", "urgenza_data", "urgenza_motivo", "mvp_link", "mvp_files", "dati_files"]).forEach(function (n) {
+        if (step === 0 && ["mvp_link", "mvp_files", "dati_files"].indexOf(n) > -1) return;
+        if (step === 1 && ["email", "urgenza_data", "urgenza_motivo", "dati_files"].indexOf(n) > -1) return;
+        if (step === 2 && ["email", "urgenza_data", "urgenza_motivo", "mvp_link", "mvp_files"].indexOf(n) > -1) return;
+        setInvalid(n, bad.indexOf(n) > -1);
+      });
+      if (bad.length) {
+        var f = form.querySelector('[data-field="' + bad[0] + '"]');
+        if (f) { f.scrollIntoView({ behavior: "smooth", block: "center" }); var i = f.querySelector("input,select,textarea"); if (i && i.type !== "file") i.focus({ preventScroll: true }); }
+      }
+    }
+    return bad.length === 0;
+  }
+  form.addEventListener("input", function (e) {
+    var f = e.target.closest("[data-field]"); if (f) f.classList.remove("invalid");
+    onChange();
+  });
+  form.addEventListener("change", function (e) {
+    var f = e.target.closest("[data-field]"); if (f) f.classList.remove("invalid");
+    onChange();
+  });
+
+  /* ---------- checklist del pacchetto ---------- */
+  function pkgState() {
+    var ok = {
+      idea: checks(0).length === 0,
+      mvp: !!(val("mvp_tipo") && GITHUB_RE.test(val("mvp_link"))),
+      istruzioni: ["scopo", "input", "passi", "esempio", "limiti", "provato_da"].every(filled),
+      casi: [1, 2, 3].every(function (n) { return filled("caso" + n + "_input") && filled("caso" + n + "_atteso"); }),
+      semaforo: filled("semaforo"),
+      dati: !!(filled("conferma_dati") && (files.dati.length || val("semaforo") === "rosso"))
+    };
+    return ok;
+  }
+  function renderPkg() {
+    var ok = pkgState(), n = 0;
+    $$("#pkg li").forEach(function (li) {
+      var k = li.dataset.k; li.classList.toggle("ok", !!ok[k]); if (ok[k]) n++;
+      if (!li.querySelector("svg")) li.querySelector(".b").innerHTML = B.CHECK;
+    });
+    $("#pkgCount").textContent = n + "/6";
+    $("#pkgBar").style.width = (n / 6 * 100) + "%";
+    $("#pkgBar").style.setProperty("--c", n === 6 ? "var(--pos)" : "var(--accent)");
+    [0, 1, 2].forEach(function (s) { $$("#stepper button")[s].classList.toggle("done", checks(s).length === 0); });
+  }
+
+  /* ---------- campi dipendenti ---------- */
+  function syncDeps() {
+    $("#urgenzaDett").classList.toggle("hidden", val("urgenza") !== "Scadenza");
+    var red = val("semaforo") === "rosso";
+    $("#redAlert").classList.toggle("hidden", !red);
+    $('[data-drop="dati"]').classList.toggle("disabled", red);
+    if (red && files.dati.length) { files.dati.forEach(function (it) { if (it.url) URL.revokeObjectURL(it.url); }); files.dati = []; renderFiles("dati"); }
+    // "Nessuno" esclude gli altri sistemi
+  }
+  form.addEventListener("change", function (e) {
+    if (e.target.name !== "sistemi") return;
+    var boxes = $$('input[name="sistemi"]');
+    if (e.target.value === "Nessuno" && e.target.checked) boxes.forEach(function (b) { if (b !== e.target) b.checked = false; });
+    else if (e.target.checked) boxes.forEach(function (b) { if (b.value === "Nessuno") b.checked = false; });
+  });
+
+  /* ---------- file ---------- */
+  $$("[data-drop]").forEach(function (dz) {
+    var key = dz.dataset.drop, inp = dz.querySelector("input");
+    inp.addEventListener("change", function () { addFiles(key, inp.files); inp.value = ""; });
+    ["dragenter", "dragover"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add("dragover"); }); });
+    ["dragleave", "drop"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove("dragover"); }); });
+    dz.addEventListener("drop", function (e) { if (e.dataTransfer && e.dataTransfer.files) addFiles(key, e.dataTransfer.files); });
+  });
+  function addFiles(key, list) {
+    var probs = [];
+    Array.prototype.forEach.call(list, function (f) {
+      if (files[key].length >= cfg.maxFiles) { probs.push("Puoi caricare al massimo " + cfg.maxFiles + " file."); return; }
+      if (f.size > MAX_BYTES) { probs.push("«" + f.name + "» supera i " + cfg.maxFileMB + " MB."); return; }
+      if (files[key].some(function (x) { return x.file.name === f.name && x.file.size === f.size; })) return;
+      files[key].push({ file: f, url: f.type.indexOf("image/") === 0 ? URL.createObjectURL(f) : null });
+    });
+    var err = form.querySelector('[data-err="' + key + '"]'), fld = err.closest("[data-field]");
+    if (probs.length) { err.dataset.def = err.dataset.def || err.textContent; err.textContent = probs.filter(function (v, i, a) { return a.indexOf(v) === i; }).join(" "); fld.classList.add("invalid"); }
+    else { if (err.dataset.def) err.textContent = err.dataset.def; fld.classList.remove("invalid"); }
+    renderFiles(key); onChange();
+  }
+  function renderFiles(key) {
+    var ul = form.querySelector('[data-list="' + key + '"]'); ul.innerHTML = "";
+    files[key].forEach(function (it, i) {
+      var li = document.createElement("li"); li.className = "file";
+      var th = document.createElement("div"); th.className = "file-thumb";
+      if (it.url) th.style.backgroundImage = "url('" + it.url + "')"; else th.textContent = ext(it.file.name);
+      var m = document.createElement("div"); m.className = "file-meta";
+      m.innerHTML = '<div class="file-name"></div><div class="file-size"></div>';
+      m.firstChild.textContent = it.file.name;
+      m.lastChild.textContent = (it.url ? "Immagine · " : "File · ") + size(it.file.size);
+      var rm = document.createElement("button"); rm.type = "button"; rm.className = "file-remove";
+      rm.setAttribute("aria-label", "Rimuovi " + it.file.name);
+      rm.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+      rm.addEventListener("click", function () { if (it.url) URL.revokeObjectURL(it.url); files[key].splice(i, 1); renderFiles(key); onChange(); });
+      li.appendChild(th); li.appendChild(m); li.appendChild(rm); ul.appendChild(li);
+    });
+  }
+  function ext(n) { var p = n.split("."); return p.length > 1 ? p.pop().slice(0, 4) : "file"; }
+  function size(b) { return b < 1024 ? b + " B" : b < 1048576 ? (b / 1024).toFixed(0) + " KB" : (b / 1048576).toFixed(1).replace(".", ",") + " MB"; }
+
+  /* ---------- bozza (solo testo, su questo browser) ---------- */
+  var saveT;
+  function snapshot() {
+    var o = {};
+    Array.prototype.forEach.call(form.elements, function (e) {
+      if (!e.name || e.type === "file") return;
+      if (e.type === "checkbox" || e.type === "radio") { if (e.checked) (o[e.name] = o[e.name] || []).push(e.value); }
+      else if (e.value) o[e.name] = e.value;
+    });
+    return o;
+  }
+  function saveDraft() {
+    var s = snapshot();
+    B.storeSet(DRAFT_KEY, JSON.stringify(s));
+    var d = new Date();
+    $("#savedNote").textContent = Object.keys(s).length > 2 ? "Bozza salvata alle " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0") + (files.mvp.length + files.dati.length ? " (i file vanno ricaricati se chiudi la pagina)" : "") : "";
+  }
+  function loadDraft() {
+    var raw = B.storeGet(DRAFT_KEY); if (!raw) return;
+    var o; try { o = JSON.parse(raw); } catch (e) { return; }
+    Array.prototype.forEach.call(form.elements, function (e) {
+      if (!e.name || e.type === "file" || !(e.name in o)) return;
+      if (e.type === "checkbox" || e.type === "radio") e.checked = [].concat(o[e.name]).indexOf(e.value) > -1;
+      else e.value = o[e.name];
+    });
+    $("#savedNote").textContent = "Bozza ripristinata";
+  }
+  function onChange() {
+    syncDeps(); renderPkg(); updateCounts();
+    clearTimeout(saveT); saveT = setTimeout(saveDraft, 500);
+  }
+  function updateCounts() {
+    $$("textarea[data-count]").forEach(function (t) {
+      var c = t.parentElement.querySelector(".counter");
+      if (!c) { c = document.createElement("span"); c.className = "counter"; t.insertAdjacentElement("afterend", c); }
+      c.textContent = t.value.length + " / " + cfg.maxTesto;
+    });
+  }
+  function resetAll() {
+    form.reset();
+    ["mvp", "dati"].forEach(function (k) { files[k].forEach(function (it) { if (it.url) URL.revokeObjectURL(it.url); }); files[k] = []; renderFiles(k); });
+    $$(".invalid").forEach(function (e) { e.classList.remove("invalid"); });
+    $$(".field.auto").forEach(function (e) { e.classList.remove("auto"); });
+    $("#zipResult").className = "alert hidden"; $("#startCard").classList.remove("loaded");
+    try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+    $("#savedNote").textContent = "";
+    onChange(); go(0);
+  }
+  $("#clearBtn").addEventListener("click", function () {
+    if (confirm("Vuoi svuotare il modulo e cancellare la bozza salvata?")) resetAll();
+  });
+
+  /* ---------- riepilogo ---------- */
+  function row(label, v, req) {
+    var s = Array.isArray(v) ? v.join(", ") : v;
+    return "<dt>" + B.esc(label) + "</dt><dd" + (!s && req ? ' class="miss"' : "") + ">" + (s ? B.esc(s) : req ? "Mancante" : "–") + "</dd>";
+  }
+  function block(title, step, rows) {
+    return '<div class="sum-block"><h3>' + title + '<button type="button" data-go="' + step + '">Modifica</button></h3><dl>' + rows + "</dl></div>";
+  }
+  function renderSummary() {
+    var urg = val("urgenza") === "Scadenza" ? "Entro il " + B.fmtDate(val("urgenza_data"), true) + " · " + val("urgenza_motivo") : "Nessuna scadenza";
+    var quant = [val("ore_settimana") && val("ore_settimana") + " ore/settimana", val("persone") && val("persone") + " persone"].filter(Boolean).join(" · ");
+    var h = block("Idea Card", 0,
+      row("Titolo", val("titolo"), 1) + row("Reparto", val("funzione"), 1) +
+      row("Richiedente", [val("nome"), val("cognome")].join(" ").trim() + (val("email") ? " · " + val("email") : ""), 1) +
+      row("AI Champion", val("champion")) + row("Problema oggi", val("problema") + (quant ? "\n" + quant : ""), 1) +
+      row("Risultato atteso", val("risultato"), 1) + row("Come lo misureremo", val("misura"), 1) +
+      row("Utenti e frequenza", [val("utenti"), val("frequenza")].filter(Boolean).join(" · "), 1) +
+      row("Beneficio stimato", [val("beneficio_tipo").join(", "), val("beneficio")].filter(Boolean).join(" · "), 1) +
+      row("Urgenza", urg));
+    h += block("MVP e istruzioni", 1,
+      row("Tipo di MVP", val("mvp_tipo"), 1) + row("Repository GitHub", val("mvp_link"), 1) +
+      row("File dell'MVP", files.mvp.map(function (x) { return x.file.name; }).join(", ")) +
+      row("Scopo", val("scopo"), 1) + row("Input", val("input"), 1) + row("Passi", val("passi"), 1) +
+      row("Risultato corretto", val("esempio"), 1) + row("Quando non funziona", val("limiti"), 1) + row("Provato da", val("provato_da"), 1) +
+      [1, 2, 3].map(function (n) { return row("Caso " + n, (val("caso" + n + "_input") && val("caso" + n + "_atteso")) ? val("caso" + n + "_input") + "\n→ " + val("caso" + n + "_atteso") : "", 1); }).join(""));
+    h += block("Dati e semaforo", 2,
+      row("Sistemi", val("sistemi"), 1) + row("Dati utilizzati", val("dati_descr"), 1) +
+      row("Semaforo", val("semaforo") ? B.SEMAFORO[val("semaforo")] : "", 1) +
+      row("Dati di esempio", val("semaforo") === "rosso" ? "Li prepara l'Ufficio Innovazione (semaforo rosso)" : files.dati.map(function (x) { return x.file.name; }).join(", "), 1) +
+      row("Anonimizzazione", filled("conferma_dati") ? "Confermata" : "", 1));
+    $("#summary").innerHTML = h;
+  }
+  $("#summary").addEventListener("click", function (e) { var b = e.target.closest("[data-go]"); if (b) go(+b.dataset.go, true); });
+
+  /* ---------- invio ---------- */
+  function codice() {
+    var d = new Date(), p = function (n) { return String(n).padStart(2, "0"); };
+    return "IDEA-" + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    $("#errorAlert").classList.add("hidden");
+    for (var s = 0; s < 3; s++) { if (!validateStep(s, false)) { go(s); validateStep(s, true); return; } }
+
+    var code = codice();
+    var data = new FormData();
+    data.append("codice", code);
+    data.append("inviata", new Date().toISOString());
+    var snap = snapshot();
+    Object.keys(snap).forEach(function (k) { data.append(k, Array.isArray(snap[k]) ? snap[k].join(", ") : snap[k]); });
+    files.mvp.forEach(function (it) { data.append("mvp_files", it.file, it.file.name); });
+    files.dati.forEach(function (it) { data.append("dati_files", it.file, it.file.name); });
+
+    var btn = $("#submitBtn"); btn.disabled = true; btn.firstChild.textContent = "Invio in corso… ";
+    var done = function (demo, res) {
+      if (res && res.codice) code = res.codice;
+      btn.disabled = false; btn.firstChild.textContent = "Invia la richiesta ";
+      $("#successTitle").textContent = demo ? "Anteprima completata" : "Richiesta inviata";
+      $("#successText").textContent = demo
+        ? "Il pacchetto è completo e il modulo funziona. Configura l'endpoint in assets/config.js per inviare davvero le richieste all'Ufficio Innovazione."
+        : res && res.conferma
+          ? "Grazie " + val("nome") + ". Ti abbiamo scritto a " + val("email") + ": apri l'email e conferma l'invio. Da quel momento il progetto entra nel backlog e entro 5 giorni lavorativi ricevi l'esito del triage, con il motivo."
+          : "Grazie " + val("nome") + ". Il tuo progetto entra nel backlog: entro 5 giorni lavorativi ricevi l'esito del triage, con il motivo.";
+      if (res && res.conferma) $("#successTitle").textContent = "Controlla la tua email";
+      $("#successCode").textContent = code;
+      form.classList.add("hidden"); $("#demoAlert").classList.add("hidden"); $("#stepper").classList.add("hidden");
+      $("#success").classList.remove("hidden");
+      try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+      $("#success").scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    if (!cfg.endpoint) { setTimeout(function () { done(true); }, 700); return; }
+    fetch(cfg.endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || j.ok === false) { var e = new Error(j.errore || "HTTP " + r.status); e.server = !!j.errore; throw e; }
+          done(false, j);
+        });
+      })
+      .catch(function (err) {
+        btn.disabled = false; btn.firstChild.textContent = "Invia la richiesta ";
+        $("#errorText").textContent = err.server
+          ? err.message + " La bozza resta salvata."
+          : "Invio non riuscito (" + err.message + "). La bozza resta salvata: controlla la connessione e riprova.";
+        $("#errorAlert").classList.remove("hidden");
+      });
+  });
+  $("#newBtn").addEventListener("click", function () {
+    $("#success").classList.add("hidden"); form.classList.remove("hidden"); $("#stepper").classList.remove("hidden");
+    if (!cfg.endpoint) $("#demoAlert").classList.remove("hidden");
+    resetAll();
+  });
+
+  /* ---------- skill: copia del testo per Claude ---------- */
+  $$("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = document.getElementById(b.dataset.copy).textContent;
+      var ok = function () { b.textContent = "Copiato"; setTimeout(function () { b.textContent = "Copia"; }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok, function () {});
+      else { var r = document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.copy)); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+    });
+  });
+
+  /* ---------- zip del progetto: lettura nel browser (nessun invio finché non confermi) ---------- */
+  // Formato ZIP essenziale: directory centrale + file "stored" o "deflate" (quello che produce git archive).
+  function leggiZip(buf) {
+    var v = new DataView(buf), n = buf.byteLength, eocd = -1;
+    for (var i = n - 22; i >= Math.max(0, n - 65557); i--) { if (v.getUint32(i, true) === 0x06054b50) { eocd = i; break; } }
+    if (eocd < 0) throw new Error("Il file non è uno zip valido.");
+    var tot = v.getUint16(eocd + 10, true), p = v.getUint32(eocd + 16, true), voci = [];
+    if (tot > 5000) throw new Error("Lo zip contiene troppi file.");
+    var dec = new TextDecoder("utf-8");
+    for (var k = 0; k < tot; k++) {
+      if (p + 46 > n || v.getUint32(p, true) !== 0x02014b50) throw new Error("Zip danneggiato.");
+      var metodo = v.getUint16(p + 10, true), compr = v.getUint32(p + 20, true), dim = v.getUint32(p + 24, true);
+      var ln = v.getUint16(p + 28, true), le = v.getUint16(p + 30, true), lc = v.getUint16(p + 32, true), off = v.getUint32(p + 42, true);
+      var nome = dec.decode(new Uint8Array(buf, p + 46, ln));
+      voci.push({ nome: nome, metodo: metodo, compr: compr, dim: dim, off: off });
+      p += 46 + ln + le + lc;
+    }
+    return { voci: voci, estrai: function (e) {
+      if (v.getUint32(e.off, true) !== 0x04034b50) return Promise.reject(new Error("Zip danneggiato."));
+      var inizio = e.off + 30 + v.getUint16(e.off + 26, true) + v.getUint16(e.off + 28, true);
+      var dati = new Uint8Array(buf, inizio, e.compr);
+      if (e.metodo === 0) return Promise.resolve(dati.slice());
+      if (e.metodo !== 8 || typeof DecompressionStream === "undefined") return Promise.reject(new Error("Formato di compressione non supportato da questo browser."));
+      var s = new Blob([dati]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+      return new Response(s).arrayBuffer().then(function (ab) { return new Uint8Array(ab); });
+    } };
+  }
+
+  var TESTI = ["titolo", "nome", "cognome", "email", "problema", "risultato", "misura", "utenti", "beneficio",
+    "urgenza_motivo", "scopo", "input", "passi", "esempio", "limiti", "provato_da", "caso1_input", "caso1_atteso",
+    "caso2_input", "caso2_atteso", "caso3_input", "caso3_atteso", "dati_descr", "note"];
+  var SCELTE = ["funzione", "champion", "frequenza", "urgenza", "mvp_tipo", "semaforo"];
+  var MULTI = ["beneficio_tipo", "sistemi"];
+  var ETICHETTE = { funzione: "Reparto", champion: "AI Champion", frequenza: "Quanto spesso", urgenza: "Urgenza", mvp_tipo: "Tipo di MVP", semaforo: "Semaforo",
+    beneficio_tipo: "Tipo di beneficio", sistemi: "Sistemi", ore_settimana: "Ore a settimana", persone: "Persone", urgenza_data: "Entro quando", repository: "Repository GitHub" };
+
+  function segna(nome) { var f = form.querySelector('[data-field="' + nome + '"]'); if (f) { f.classList.add("auto"); f.classList.remove("invalid"); } }
+  function applicaProgetto(j) {
+    var c = (j && j.campi) || {}, scartati = [], n = 0;
+    form.reset();
+    $$(".field.auto").forEach(function (f) { f.classList.remove("auto"); });
+    TESTI.forEach(function (k) {
+      var el = form.elements[k], x = c[k];
+      if (!el || typeof x !== "string" || !x.trim()) return;
+      var max = +el.getAttribute("maxlength") || cfg.maxTesto;
+      el.value = x.trim().slice(0, max); segna(k); n++;
+    });
+    SCELTE.forEach(function (k) {
+      var x = c[k], el = form.elements[k], ok = false;
+      if (typeof x !== "string" || !x) return;
+      if (el && el.tagName === "SELECT") { ok = Array.prototype.some.call(el.options, function (o) { return o.value && o.value === x; }); if (ok) el.value = x; }
+      else $$('input[name="' + k + '"]').forEach(function (r) { if (r.value === x) { r.checked = true; ok = true; } });
+      if (ok) { segna(k); n++; } else scartati.push(ETICHETTE[k] + ": «" + x + "»");
+    });
+    MULTI.forEach(function (k) {
+      var x = c[k], presi = 0;
+      if (!Array.isArray(x)) return;
+      x.forEach(function (val) {
+        var box = $$('input[name="' + k + '"]').filter(function (b) { return b.value === val; })[0];
+        if (box) { box.checked = true; presi++; } else scartati.push(ETICHETTE[k] + ": «" + val + "»");
+      });
+      if (presi) { segna(k); n++; }
+    });
+    ["ore_settimana", "persone"].forEach(function (k) {
+      var x = c[k];
+      if (x === null || x === undefined || x === "") return;
+      if (typeof x === "number" && isFinite(x) && x >= 0) { form.elements[k].value = String(x); segna(k); n++; }
+      else scartati.push(ETICHETTE[k] + ": «" + x + "»");
+    });
+    if (c.urgenza === "Scadenza" && typeof c.urgenza_data === "string") {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(c.urgenza_data)) { form.elements.urgenza_data.value = c.urgenza_data; segna("urgenza_data"); n++; }
+      else if (c.urgenza_data) scartati.push(ETICHETTE.urgenza_data + ": «" + c.urgenza_data + "»");
+    }
+    if (typeof j.repository === "string" && GITHUB_RE.test(j.repository.trim())) { form.elements.mvp_link.value = j.repository.trim(); segna("mvp_link"); n++; }
+    else if (j.repository) scartati.push(ETICHETTE.repository + ": «" + j.repository + "»");
+    return { n: n, scartati: scartati };
+  }
+
+  function esitoZip(tipo, html) {
+    var box = $("#zipResult");
+    box.className = "alert " + tipo;
+    var ic = tipo === "neg" ? '<path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.01"/>'
+      : tipo === "pos" ? '<circle cx="12" cy="12" r="9.5"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/>'
+      : '<circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.5v.01"/>';
+    box.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ic + "</svg><div>" + html + "</div>";
+  }
+
+  function caricaZip(file) {
+    if (!file) return;
+    if (!/\.zip$/i.test(file.name)) { esitoZip("neg", "<b>Serve lo zip del progetto</b> (il file <code>.zip</code> nella cartella <code>consegna</code>)."); return; }
+    if (file.size > 200 * 1024 * 1024) { esitoZip("neg", "<b>Lo zip è troppo grande.</b> Chiedi a Claude di rigenerarlo con lo script della skill."); return; }
+    var compilato = Object.keys(snapshot()).filter(function (k) { return k !== "urgenza"; }).length > 0;
+    if (compilato && !confirm("Il modulo contiene già dei dati: li sostituisco con quelli dello zip?")) return;
+    esitoZip("info", "Leggo <b>" + B.esc(file.name) + "</b>…");
+    file.arrayBuffer().then(function (buf) {
+      var z = leggiZip(buf);
+      var scheda = z.voci.filter(function (e) { return /^([^/]+\/)?beyond-progetto\.json$/.test(e.nome); })
+        .sort(function (a, b) { return a.nome.length - b.nome.length; })[0];
+      if (!scheda) throw new Error("Nello zip non c'è beyond-progetto.json. Chiedi a Claude di preparare la consegna con la skill di Beyond.");
+      if (scheda.dim > 512 * 1024) throw new Error("beyond-progetto.json è troppo grande.");
+      var base = scheda.nome.slice(0, -"beyond-progetto.json".length);
+      var esempi = z.voci.filter(function (e) {
+        var r = e.nome.slice(base.length);
+        return e.nome.indexOf(base) === 0 && /^esempi\/[^/]+$/.test(r) && !/^esempi\/readme\.md$/i.test(r) && e.dim > 0;
+      });
+      return z.estrai(scheda).then(function (bytes) {
+        var j;
+        try { j = JSON.parse(new TextDecoder("utf-8").decode(bytes)); } catch (e) { throw new Error("beyond-progetto.json non è leggibile (JSON non valido)."); }
+        if (!j || j.formato !== "beyond-progetto/1") throw new Error("beyond-progetto.json non è nel formato di Beyond: aggiorna la skill e rigenera lo zip.");
+        return Promise.all(esempi.slice(0, cfg.maxFiles).map(function (e) {
+          if (e.dim > MAX_BYTES) return null;
+          return z.estrai(e).then(function (b) { return new File([b], e.nome.split("/").pop()); }, function () { return null; });
+        })).then(function (fileDati) { return { j: j, dati: fileDati.filter(Boolean), esempiTot: esempi.length }; });
+      });
+    }).then(function (r) {
+      ["mvp", "dati"].forEach(function (k) { files[k].forEach(function (it) { if (it.url) URL.revokeObjectURL(it.url); }); files[k] = []; });
+      var esito = applicaProgetto(r.j);
+      var note = [];
+      if (file.size <= MAX_BYTES) files.mvp.push({ file: file, url: null });
+      else note.push("lo zip supera " + cfg.maxFileMB + " MB e non viene allegato: l'Ufficio Innovazione userà il repository GitHub");
+      if (val("semaforo") !== "rosso") r.dati.forEach(function (f) { files.dati.push({ file: f, url: null }); });
+      else if (r.esempiTot) note.push("semaforo rosso: i dati di esempio dello zip non vengono allegati");
+      if (r.esempiTot > r.dati.length && val("semaforo") !== "rosso") note.push((r.esempiTot - r.dati.length) + " file di esempio non allegati (troppi o troppo grandi)");
+      renderFiles("mvp"); renderFiles("dati"); onChange(); saveDraft();
+      var h = "<b>Modulo compilato da " + B.esc(file.name) + "</b> · " + esito.n + " campi" +
+        (files.dati.length ? ", " + files.dati.length + " file di esempio" : "") +
+        ". I campi compilati sono segnati <span class=\"auto-tag\">dallo zip</span>: controlla i quattro passi, correggi se serve, conferma i dati al passo 3 e invia.";
+      if (esito.scartati.length) h += "<br><b>Da scegliere a mano</b> (valore non riconosciuto): " + esito.scartati.map(B.esc).join(" · ");
+      if (note.length) h += "<br>" + B.esc(note.join("; ")) + ".";
+      esitoZip(esito.scartati.length ? "amber" : "pos", h);
+      $("#startCard").classList.add("loaded");
+      go(0);
+      $("#stepper").scrollIntoView({ behavior: "smooth", block: "start" });
+    }).catch(function (err) {
+      esitoZip("neg", "<b>Non riesco a usare questo zip.</b> " + B.esc(err.message || String(err)));
+    });
+  }
+  (function () {
+    var dz = $("#zipDrop"), inp = dz.querySelector("input");
+    inp.addEventListener("change", function () { caricaZip(inp.files[0]); inp.value = ""; });
+    ["dragenter", "dragover"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add("dragover"); }); });
+    ["dragleave", "drop"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove("dragover"); }); });
+    dz.addEventListener("drop", function (e) { if (e.dataTransfer && e.dataTransfer.files) caricaZip(e.dataTransfer.files[0]); });
+  })();
+  form.addEventListener("input", function (e) { var f = e.target.closest(".field.auto"); if (f) f.classList.remove("auto"); });
+  form.addEventListener("change", function (e) { var f = e.target.closest(".field.auto"); if (f) f.classList.remove("auto"); });
+
+  /* ---------- avvio ---------- */
+  loadDraft();
+  syncDeps(); renderPkg(); updateCounts();
+  var m = /[?&]step=(\d)/.exec(location.search); if (m) go(+m[1]); else go(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="it" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano di sviluppo · Beyond Coesa</title>
+  <meta name="description" content="Il piano di sviluppo a 90 giorni, il backlog unico, il registro decisioni e gli indicatori di processo.">
+  <meta name="theme-color" content="#08090A">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/coesa-mark.svg">
+  <script>try{var t=new URLSearchParams(location.search).get("theme")||localStorage.getItem("beyond-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);if(/[?&]shot/.test(location.search))document.documentElement.classList.add("no-anim")}catch(e){}</script>
+  <script src="assets/accesso.js?v=22ce8e7e"></script>
+  <link rel="stylesheet" href="assets/style.css?v=22ce8e7e">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Beyond, home">
+      <img class="logo-dark" src="assets/brand/coesa-white.svg" alt="Coesa Energy" width="76" height="26">
+      <span class="sep" aria-hidden="true"></span>
+      <span class="prod">Beyond</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Sezioni">
+      <a href="index.html#strumenti">Strumenti</a>
+      <a href="piano.html" aria-current="page">Piano di sviluppo</a>
+      <a href="processo.html">Come funziona</a>
+      <a href="proponi.html" class="cta">Carica il tuo progetto</a>
+    </nav>
+    <div class="top-actions">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambia tema chiaro / scuro" title="Tema chiaro / scuro">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-btn" type="button" data-menu-toggle aria-controls="menu" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-page on-hero">
+    <div class="wrap">
+      <span class="eyebrow">Un solo backlog, un solo piano</span>
+      <h1>Piano di sviluppo <span class="y" id="hTrim">a 90 giorni</span></h1>
+      <p class="lead">Progetti strategici e richieste delle funzioni competono per le stesse risorse, con le stesse regole. Il piano si pubblica dopo ogni Comitato AI ed è visibile a tutte le funzioni.</p>
+      <div class="meta-row" id="hMeta"></div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-top:28px">
+    <nav class="pagetabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="piano" aria-selected="true">Piano 90 giorni</button>
+      <button role="tab" data-tab="backlog" aria-selected="false">Backlog e richieste<span class="n" id="nBacklog"></span></button>
+      <button role="tab" data-tab="decisioni" aria-selected="false">Registro decisioni<span class="n" id="nDec"></span></button>
+      <button role="tab" data-tab="indicatori" aria-selected="false">Indicatori</button>
+    </nav>
+
+    <!-- ===== Piano ===== -->
+    <section data-panel="piano">
+      <div class="sec-lab">Capacità dell'Ufficio Innovazione <span class="soft" id="capLead"></span></div>
+      <div class="quote-grid" id="quote" style="margin-bottom:28px"></div>
+      <div class="sec-lab">Board del trimestre <span class="soft">clicca una voce per il dettaglio</span></div>
+      <div class="board" id="board"></div>
+      <p style="font-size:12.5px;color:var(--ink-3);margin-top:14px">Ingresso uguale uscita: se il trimestre è saturo, una nuova voce entra in Now solo scambiando posto con un'altra, e lo scambio lo decide il Comitato.</p>
+    </section>
+
+    <!-- ===== Backlog ===== -->
+    <section data-panel="backlog" hidden>
+      <div class="toolbar">
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+          <input type="search" id="q" placeholder="Cerca per titolo, codice o funzione" aria-label="Cerca nel backlog"></label>
+        <div class="chips" id="bFilter"></div>
+        <span class="count" id="bCount"></span>
+      </div>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th style="width:24px"></th><th>Voce</th><th>Funzione</th><th>Fase</th><th>Esito triage</th><th>Piano</th><th>Semaforo</th><th class="r">Punteggio</th><th class="r">Ricevuta</th></tr></thead>
+          <tbody id="bBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Decisioni ===== -->
+    <section data-panel="decisioni" hidden>
+      <p style="color:var(--ink-2);margin-bottom:14px;max-width:72ch">Per ogni esito: data, motivo e chi ha deciso. Le deroghe della Direzione all'ordine di punteggio finiscono qui, sempre con motivazione scritta.</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>Data</th><th>Voce</th><th>Decisione</th><th>Motivo</th><th>Chi ha deciso</th></tr></thead>
+          <tbody id="dBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Indicatori ===== -->
+    <section data-panel="indicatori" hidden>
+      <p style="color:var(--ink-2);margin-bottom:14px;max-width:72ch">Sette indicatori di processo. I valori target sono proposte di partenza, da calibrare dopo i primi 90 giorni.</p>
+      <div class="grid-kpi" id="kpi" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr))"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img class="logo-light" src="assets/brand/coesa-energy.svg" alt="Coesa Energy" width="76" height="34">
+    <img class="logo-dark" src="assets/brand/coesa-energy-white.svg" alt="Coesa Energy" width="76" height="34">
+    <span>Beyond · Ufficio Innovazione</span>
+    <div class="info">
+      <span><b>COESA Srl</b></span>
+      <span>Via Beaumont 7, 10143 Torino</span>
+      <a href="https://www.coesaenergy.it">www.coesaenergy.it</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/config.js?v=22ce8e7e"></script>
+<script src="assets/data.js?v=22ce8e7e"></script>
+<script src="assets/odoo.js?v=22ce8e7e"></script>
+<script src="assets/app.js?v=22ce8e7e"></script>
+<script>
+(function () {
+  var B = window.Beyond, D = window.BEYOND_DATA || {}, T = D.trimestre || {};
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  var backlog = (D.backlog || []).map(function (b) { return Object.assign({ score: B.score(b.voti) }, b); });
+
+  /* ---------- hero ---------- */
+  if (T.nome) $("#hTrim").textContent = T.nome;
+  var usate = (T.quote || []).reduce(function (s, q) { return s + q.usate; }, 0);
+  var sat = T.giornateDisponibili ? Math.round(usate / T.giornateDisponibili * 100) : 0;
+  $("#hMeta").innerHTML =
+    (D.esempio ? '<span class="badge-sample"><span class="dot"></span>Dati di esempio</span>' : "") +
+    (T.dal ? "<span>Periodo <b>" + B.fmtDate(T.dal, true) + " – " + B.fmtDate(T.al, true) + "</b></span>" : "<span>Trimestre <b>non ancora definito</b></span>") +
+    "<span>Aggiornato il <b>" + B.fmtDate(D.aggiornato, true) + "</b></span>" +
+    (T.prossimoComitato ? "<span>Prossimo Comitato AI <b>" + B.fmtDate(T.prossimoComitato, true) + "</b></span>" : "");
+
+  /* ---------- schede ---------- */
+  function tab(id) {
+    $$("#tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.tab === id); });
+    $$("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== id; });
+    B.storeSet("beyond-piano-tab", id);
+  }
+  $("#tabs").addEventListener("click", function (e) { var b = e.target.closest("[data-tab]"); if (b) tab(b.dataset.tab); });
+
+  /* ---------- quote di capacità ---------- */
+  $("#capLead").textContent = T.giornateDisponibili
+    ? usate + " di " + T.giornateDisponibili + " giornate-persona assegnate · saturazione " + sat + "% (target 80–90%)"
+    : "Capacità del trimestre non ancora definita: la imposta l'Ufficio Innovazione dopo il Comitato AI.";
+  $("#quote").innerHTML = (T.quote || []).map(function (q) {
+    var alloc = Math.round(T.giornateDisponibili * q.peso / 100), pc = alloc ? Math.round(q.usate / alloc * 100) : 0;
+    return '<div class="quota' + (pc > 100 ? " over" : "") + '"><div class="k">' + B.esc(q.nome) + "<span>" + q.peso + "%</span></div>" +
+      '<div class="v"><b>' + q.usate + "</b><span>/ " + alloc + " gg · " + pc + "%</span></div>" +
+      '<div class="meter"><i style="width:' + Math.min(pc, 100) + '%"></i></div></div>';
+  }).join("");
+
+  /* ---------- board ---------- */
+  var COLS = [
+    { id: "now", t: "Now", s: "in corso" },
+    { id: "next", t: "Next", s: "prossimo trimestre" },
+    { id: "later", t: "Later", s: "candidate" },
+    { id: "nonora", t: "Non ora", s: "con motivo e riesame" }
+  ];
+  function card(b) {
+    var st = B.STADI[b.stadio];
+    var h = '<button type="button" class="item" data-open="' + B.esc(b.id) + '">' +
+      '<div class="row1"><span class="code">' + B.esc(b.id) + "</span>" + (st ? B.pill(st.t, st.c, true) : "") + B.sem(b.semaforo) +
+      '<span class="score">' + (b.score != null ? b.score + " pt" : "") + "</span></div>" +
+      "<h4>" + B.esc(b.titolo) + "</h4>" +
+      '<div class="row2"><span>' + B.esc(b.funzione) + "</span>" + (b.giornate ? "<span>· " + b.giornate + " gg</span>" : "") +
+      (b.target ? "<span>· target " + B.fmtDate(b.target) + "</span>" : "") + "</div>";
+    if (b.colonna === "nonora" && b.motivo) h += '<div class="why"><b>Motivo:</b> ' + B.esc(b.motivo) + (b.riesame ? "<br><b>Riesame:</b> " + B.fmtDate(b.riesame, true) : "") + "</div>";
+    return h + "</button>";
+  }
+  $("#board").innerHTML = COLS.map(function (c) {
+    var items = backlog.filter(function (b) { return b.colonna === c.id; }).sort(function (a, z) { return (z.score || 0) - (a.score || 0); });
+    var gg = items.reduce(function (s, b) { return s + (b.giornate || 0); }, 0);
+    return '<div class="col ' + c.id + '"><div class="col-h"><i></i><b>' + c.t + '</b><span class="c">' + items.length + "</span>" +
+      '<span class="s">' + (gg ? gg + " gg" : c.s) + "</span></div>" +
+      (items.map(card).join("") || '<div class="empty">Nessuna voce</div>') + "</div>";
+  }).join("");
+  $("#board").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-open]"); if (!b) return;
+    openItem(b.dataset.open);
+  });
+  function openItem(id) {
+    tab("backlog"); filtro = "tutte"; $("#q").value = ""; renderFilter(); renderBacklog(); toggleRow(id, true);
+    var r = document.querySelector('tr[data-id="' + id + '"]'); if (r) r.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  /* ---------- backlog ---------- */
+  var filtro = "tutte", aperta = null;
+  var FILTRI = [
+    { id: "tutte", t: "Tutte" },
+    { id: "piano", t: "A piano", f: function (b) { return b.colonna === "now" || b.colonna === "next" || b.colonna === "later"; } },
+    { id: "triage", t: "In triage", f: function (b) { return b.fase <= 3 && !b.colonna && b.esito !== "senza-ai" && b.esito !== "coperta"; } },
+    { id: "esito", t: "Chiuse con esito", f: function (b) { return b.esito === "senza-ai" || b.esito === "coperta" || b.esito === "non-ora" || b.esito === "integrare"; } },
+    { id: "funzioni", t: "Dalle funzioni", f: function (b) { return b.origine === "funzione"; } }
+  ];
+  function renderFilter() {
+    $("#bFilter").innerHTML = FILTRI.map(function (f) {
+      var n = f.f ? backlog.filter(f.f).length : backlog.length;
+      return '<button class="chip" type="button" data-f="' + f.id + '" aria-pressed="' + (f.id === filtro) + '">' + f.t + '<span class="n">' + n + "</span></button>";
+    }).join("");
+  }
+  $("#bFilter").addEventListener("click", function (e) { var b = e.target.closest("[data-f]"); if (!b) return; filtro = b.dataset.f; renderFilter(); renderBacklog(); });
+  $("#q").addEventListener("input", renderBacklog);
+
+  function phase(n) {
+    var bar = ""; for (var i = 0; i < 8; i++) bar += "<i" + (i <= n ? ' class="on"' : "") + "></i>";
+    return '<span class="phase"><span class="bar">' + bar + "</span>" + n + " · " + B.FASI[n] + "</span>";
+  }
+  function detail(b) {
+    var left;
+    if (b.voti) {
+      left = '<div class="score-big"><b>' + b.score + '</b><span>/ 100 punti</span></div><div class="score-bars" style="margin-top:14px">' +
+        B.CRITERI.map(function (c) {
+          var v = b.voti[c.id] || 0;
+          return '<div class="sb"><span class="l">' + c.nome + " <small>" + Math.round(c.peso * 100) + '%</small></span><div class="meter"><i style="width:' + v * 20 + '%"></i></div><span class="v">' + v + "/5</span></div>";
+        }).join("") + "</div>";
+    } else {
+      left = '<div style="color:var(--ink-2);font-size:13.5px">Punteggio non ancora assegnato: viene calcolato in fase di valutazione.</div>';
+    }
+    var facts = [
+      ["Origine", b.origine === "portafoglio" ? "Portafoglio strategico (assessment)" : "Richiesta di funzione"],
+      ["Quota di capacità", ({ strategico: "Portafoglio strategico", funzioni: "Richieste delle funzioni", manutenzione: "Manutenzione", sperimentazione: "Sperimentazione" })[b.quota] || "–"],
+      ["Referente", b.referente || "Da assegnare"],
+      ["Giornate stimate", b.giornate ? b.giornate + " gg" : "–"],
+      ["Data target", b.target ? B.fmtDate(b.target, true) : "–"]
+    ];
+    if (b.motivo) facts.push(["Motivo dell'esito", b.motivo]);
+    if (b.riesame) facts.push(["Data di riesame", B.fmtDate(b.riesame, true)]);
+    if (!b.esito) { var wd = B.workdaysSince(b.ricevuta); facts.push(["In triage da", wd + " giorni lavorativi" + (wd > 5 ? " · oltre il target, sale al responsabile Innovazione" : "")]); }
+    var right = '<div style="display:grid;gap:10px">' + facts.map(function (f) {
+      return '<div><div style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:700">' + f[0] + '</div><div style="font-size:13.5px;margin-top:2px">' + B.esc(f[1]) + "</div></div>";
+    }).join("") + "</div>";
+    return '<tr class="det" data-det="' + B.esc(b.id) + '"><td colspan="9"><div class="det-in"><div>' + left + "</div>" + right + "</div></td></tr>";
+  }
+  function renderBacklog() {
+    var f = FILTRI.filter(function (x) { return x.id === filtro; })[0];
+    var q = $("#q").value.trim().toLowerCase();
+    var list = backlog.filter(function (b) {
+      if (f && f.f && !f.f(b)) return false;
+      return !q || (b.titolo + " " + b.id + " " + b.funzione).toLowerCase().indexOf(q) > -1;
+    }).sort(function (a, z) { return (z.score || -1) - (a.score || -1) || (z.ricevuta > a.ricevuta ? 1 : -1); });
+    $("#bCount").textContent = list.length + " voci";
+    $("#bBody").innerHTML = list.map(function (b) {
+      var es = b.esito ? B.ESITI[b.esito] : null;
+      var open = aperta === b.id;
+      return '<tr class="clickable' + (open ? " open" : "") + '" data-id="' + B.esc(b.id) + '" tabindex="0" aria-expanded="' + open + '">' +
+        '<td><span class="caret">▶</span></td>' +
+        '<td class="wrap-txt"><div class="t">' + B.esc(b.titolo) + '</div><div class="s">' + B.esc(b.id) + (b.origine === "portafoglio" ? " · portafoglio" : " · funzione") + "</div></td>" +
+        '<td class="wrap-sm">' + B.esc(b.funzione) + "</td>" +
+        "<td>" + phase(b.fase) + "</td>" +
+        "<td>" + (es ? B.pill(es.t, es.c) : B.pill("In attesa", "line")) + "</td>" +
+        "<td>" + (b.colonna ? "<b>" + B.COLONNE[b.colonna] + "</b>" : '<span class="s">–</span>') + "</td>" +
+        "<td>" + B.sem(b.semaforo) + "</td>" +
+        '<td class="r num"><b>' + (b.score != null ? b.score : "–") + "</b></td>" +
+        '<td class="r num s">' + B.fmtDate(b.ricevuta) + "</td></tr>" + (open ? detail(b) : "");
+    }).join("") || '<tr><td colspan="9" style="text-align:center;color:var(--ink-3);padding:30px">Nessuna voce corrisponde ai filtri.</td></tr>';
+  }
+  function toggleRow(id, force) { aperta = force || aperta !== id ? id : null; renderBacklog(); }
+  $("#bBody").addEventListener("click", function (e) { var r = e.target.closest("tr[data-id]"); if (r) toggleRow(r.dataset.id); });
+  $("#bBody").addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && e.target.matches("tr[data-id]")) { e.preventDefault(); toggleRow(e.target.dataset.id); } });
+  $("#nBacklog").textContent = backlog.length;
+
+  /* ---------- decisioni ---------- */
+  var dec = (D.decisioni || []).slice().sort(function (a, z) { return z.data > a.data ? 1 : -1; });
+  $("#nDec").textContent = dec.length;
+  var decCls = { "Now": "accent", "Next": "info", "Later": "pos", "Non ora": "line", "Da integrare": "amber", "Risolvibile senza AI": "info", "Già coperta": "ghost" };
+  $("#dBody").innerHTML = dec.map(function (d) {
+    var b = backlog.filter(function (x) { return x.id === d.voce; })[0];
+    return '<tr><td class="num">' + B.fmtDate(d.data, true) + '</td><td class="wrap-txt" style="min-width:200px"><div class="t">' + B.esc(b ? b.titolo : d.voce) + '</div><div class="s">' + B.esc(d.voce) + "</div></td>" +
+      "<td>" + B.pill(d.decisione, decCls[d.decisione] || "ghost") + '</td><td class="wrap-txt">' + B.esc(d.motivo) + "</td><td>" + B.esc(d.chi) + "</td></tr>";
+  }).join("");
+
+  /* ---------- indicatori ---------- */
+  $("#kpi").innerHTML = (D.indicatori || []).map(function (k) {
+    var stato = "obs", lab = "Da osservare", vuoto = k.valore == null;
+    if (vuoto) return '<div class="kpi state obs"><div class="k">' + B.esc(k.nome) + '</div><div class="v">–</div>' +
+      '<div class="meter" style="margin:10px 0 8px;--c:var(--info)"><i style="width:0"></i></div>' +
+      '<div class="m" style="display:flex;gap:8px;align-items:center"><span>Target: ' + B.esc(k.target) + '</span><span style="margin-left:auto">' + B.pill("Ancora senza dati", "ghost") + "</span></div>" +
+      '<div class="m" style="margin-top:6px">' + B.esc(k.misura) + "</div></div>";
+    if (k.verso === "max") { stato = k.valore >= k.soglia ? "ok" : k.valore >= k.soglia * 0.9 ? "warn" : "bad"; }
+    if (k.verso === "min") { stato = k.valore <= k.soglia ? "ok" : k.valore <= k.soglia * 1.1 ? "warn" : "bad"; }
+    if (k.verso === "range") { stato = k.valore >= k.min && k.valore <= k.max ? "ok" : "warn"; }
+    lab = { ok: "In target", warn: "Vicino al target", bad: "Fuori target", obs: "Da osservare" }[stato];
+    var pc = k.verso === "min" ? Math.min(100, k.valore / (k.soglia * 1.5) * 100) : Math.min(100, k.valore);
+    var col = { ok: "var(--pos)", warn: "var(--amber)", bad: "var(--neg)", obs: "var(--info)" }[stato];
+    return '<div class="kpi state ' + stato + '"><div class="k">' + B.esc(k.nome) + '</div><div class="v">' + k.valore + "<small>" + k.unita + "</small></div>" +
+      '<div class="meter" style="margin:10px 0 8px;--c:' + col + '"><i style="width:' + pc + '%"></i></div>' +
+      '<div class="m" style="display:flex;gap:8px;align-items:center"><span>Target: ' + B.esc(k.target) + '</span><span style="margin-left:auto">' + B.pill(lab, { ok: "pos", warn: "amber", bad: "neg", obs: "info" }[stato]) + "</span></div>" +
+      '<div class="m" style="margin-top:6px">' + B.esc(k.misura) + "</div></div>";
+  }).join("");
+
+  /* ---------- avvio ---------- */
+  renderFilter(); renderBacklog();
+  var h = location.hash.slice(1);
+  if (h && backlog.some(function (b) { return b.id === h; })) openItem(h);
+  else { var t0 = new URLSearchParams(location.search).get("tab") || B.storeGet("beyond-piano-tab"); tab(["piano", "backlog", "decisioni", "indicatori"].indexOf(t0) > -1 ? t0 : "piano"); }
+})();
+</script>
+</body>
+</html>
